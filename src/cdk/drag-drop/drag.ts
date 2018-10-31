@@ -376,8 +376,10 @@ export class CdkDrag<T = any> implements AfterViewInit, OnDestroy {
       // We move the element out at the end of the body and we make it hidden, because keeping it in
       // place will throw off the consumer's `:last-child` selectors. We can't remove the element
       // from the DOM completely, because iOS will stop firing all subsequent events in the chain.
+      if(!this._initialContainer.copyItems) {
       element.style.display = 'none';
       this._document.body.appendChild(element.parentNode!.replaceChild(placeholder, element));
+      }
       this._document.body.appendChild(preview);
       this.dropContainer.start();
     }

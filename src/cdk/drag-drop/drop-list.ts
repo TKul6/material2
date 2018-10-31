@@ -84,6 +84,9 @@ export class CdkDropList<T = any> implements OnInit, OnDestroy {
   @Input('cdkDropListEnterPredicate')
   enterPredicate: (drag: CdkDrag, drop: CdkDropList) => boolean = () => true
 
+  @Input('cdkCopyItems')
+  copyItems: boolean = false;
+
   /** Emits when the user drops an item inside the container. */
   @Output('cdkDropListDropped')
   dropped: EventEmitter<CdkDragDrop<T, any>> = new EventEmitter<CdkDragDrop<T, any>>();

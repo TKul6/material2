@@ -23,6 +23,9 @@ export interface CdkDropListContainer<T = any> {
   /** Direction in which the list is oriented. */
   orientation: 'horizontal' | 'vertical';
 
+/* Whether the items should be dragged out from the container or copy to target drop zone.*/
+  copyItems: boolean;
+
   /** Locks the position of the draggable elements inside the container along the specified axis. */
   lockAxis: 'x' | 'y';
 
